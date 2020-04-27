@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "1421e0af-c7c8-0318-9ab5-e16dcfa6e368",
 		"name": "Geoserver",
+		"description": "https://docs.geoserver.org/stable/en/user/rest/",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -748,7 +749,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Wordspace",
+			"name": "Workspace",
 			"item": [
 				{
 					"name": "List workspace",
@@ -764,17 +765,65 @@
 							"path": [
 								"workspaces"
 							]
-						}
+						},
+						"description": "Displays a list of all workspaces on the server. Use the “Accept:” header to specify format or append an extension to the endpoint (example “/workspaces.json” for JSON)"
 					},
 					"response": []
 				},
 				{
 					"name": "Create workspace",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"workspace\": {\r\n  \t\"name\": {{workspace}}\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://{{rest_base_url}}/workspaces",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete workspace",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}"
+							]
 						}
 					},
 					"response": []
@@ -782,20 +831,97 @@
 				{
 					"name": "Edit workspace",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"workspace\": {\r\n  \t\"name\": {{workspaceNameNew}}\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}"
+							]
 						}
 					},
 					"response": []
 				}
 			],
+			"description": "https://docs.geoserver.org/latest/en/api/#1.0.0/workspaces.yaml",
 			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Style",
 			"item": [
+				{
+					"name": "List styles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{rest_base_url}}/styles",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"styles"
+							]
+						},
+						"description": "Get a list of layers"
+					},
+					"response": []
+				},
+				{
+					"name": "List ws styles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://{{rest_base_url}}//workspaces/{{workspaceName}}/styles",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"",
+								"workspaces",
+								"{{workspaceName}}",
+								"styles"
+							]
+						},
+						"description": "Get a list of layers"
+					},
+					"response": []
+				},
 				{
 					"name": "Create style",
 					"request": {
@@ -849,21 +975,6 @@
 				{
 					"name": "List layers",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "geoserver",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [
 							{
@@ -881,33 +992,223 @@
 							"path": [
 								"layers"
 							]
-						}
+						},
+						"description": "Get a list of layers"
 					},
 					"response": []
 				},
 				{
-					"name": "Delete layer",
+					"name": "Get a layer",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
 						"url": {
-							"raw": ""
-						}
+							"raw": "http://{{rest_base_url}}/layers//{{layerName}}",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"layers",
+								"",
+								"{{layerName}}"
+							]
+						},
+						"description": "Get a list of layers"
 					},
 					"response": []
 				},
 				{
-					"name": "Edit layer",
+					"name": "List ws layers",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": ""
-						}
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}/layers",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}",
+								"layers"
+							]
+						},
+						"description": "Get a list of layers"
+					},
+					"response": []
+				},
+				{
+					"name": "Create ws layer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"featureType\": {\n\t\t\"name\": \"hc_tinh\"\t\t\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}/datastores/{{storeName}}/featuretypes",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}",
+								"datastores",
+								"{{storeName}}",
+								"featuretypes"
+							]
+						},
+						"description": "Get a list of layers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get ws layer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"featureType\": {\n\t\t\"name\": \"{{layerNameNew}}\"\t\t\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}/datastores/{{storeName}}/featuretypes/{{layerName}}",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}",
+								"datastores",
+								"{{storeName}}",
+								"featuretypes",
+								"{{layerName}}"
+							]
+						},
+						"description": "Get a list of layers"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit ws layer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"featureType\": {\n\t\t\"name\": \"{{layerNameNew}}\"\t\t\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}/datastores/{{storeName}}/featuretypes/{{layerName}}",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}",
+								"datastores",
+								"{{storeName}}",
+								"featuretypes",
+								"{{layerName}}"
+							]
+						},
+						"description": "Get a list of layers"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ws layer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"featureType\": {\n\t\t\"name\": \"{{layerNameNew}}\"\t\t\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}/layers/{{layerName}}",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}",
+								"layers",
+								"{{layerName}}"
+							]
+						},
+						"description": "Get a list of layers"
 					},
 					"response": []
 				}
 			],
+			"description": "https://docs.geoserver.org/latest/en/api/#1.0.0/layers.yaml",
 			"protocolProfileBehavior": {}
 		},
 		{
@@ -916,21 +1217,54 @@
 				{
 					"name": "Create store",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"dataStore\": {\r\n\t\t\"name\": \"{{storeName}}\",\r\n\t\t\"connectionParameters\": {\r\n\t\t\t\"entry\": [\r\n\t\t\t\t{\"@key\":\"dbtype\",\"$\":\"postgis\"},\r\n\t\t\t\t{\"@key\":\"host\",\"$\":\"{{host}}\"},\r\n\t\t\t\t{\"@key\":\"port\",\"$\":\"{{port}}\"},\r\n\t\t\t\t{\"@key\":\"database\",\"$\":\"{{database}}\"},\r\n\t\t\t\t{\"@key\":\"user\",\"$\":\"{{user}}\"},\r\n\t\t\t\t{\"@key\":\"passwd\",\"$\":\"{{passwd}}\"},\r\n\t\t\t\t{\"@key\":\"Expose primary keys\",\"$\":true}\r\n\t\t\t]\r\n\t\t}\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}/datastores",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}",
+								"datastores"
+							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Edit store",
+					"name": "List store",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}/datastores",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}",
+								"datastores"
+							]
 						}
 					},
 					"response": []
@@ -938,39 +1272,103 @@
 				{
 					"name": "Delete store",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": ""
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}/datastores/{{storeName}}",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}",
+								"datastores",
+								"{{storeName}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit store",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"dataStore\": {\r\n\t\t\"connectionParameters\": {\r\n\t\t\t\"entry\": [\r\n\t\t\t\t{\"@key\":\"dbtype\",\"$\":\"postgis\"},\r\n\t\t\t\t{\"@key\":\"host\",\"$\":\"{{host}}\"},\r\n\t\t\t\t{\"@key\":\"port\",\"$\":\"{{port}}\"},\r\n\t\t\t\t{\"@key\":\"database\",\"$\":\"{{database}}\"},\r\n\t\t\t\t{\"@key\":\"user\",\"$\":\"{{user}}\"},\r\n\t\t\t\t{\"@key\":\"passwd\",\"$\":\"{{passwd}}\"},\r\n\t\t\t\t{\"@key\":\"Expose primary keys\",\"$\":false}\r\n\t\t\t]\r\n\t\t}\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{rest_base_url}}/workspaces/{{workspaceName}}/datastores/{{storeName}}",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceName}}",
+								"datastores",
+								"{{storeName}}"
+							]
 						}
 					},
 					"response": []
 				}
 			],
+			"description": "https://docs.geoserver.org/latest/en/api/#1.0.0/datastores.yaml",
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "FeatureType",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://{{rest_base_url}}/workspaces/ws-drought/datastores/drought/featuretypes/hc_tinh.json",
-					"protocol": "http",
-					"host": [
-						"{{rest_base_url}}"
-					],
-					"path": [
-						"workspaces",
-						"ws-drought",
-						"datastores",
-						"drought",
-						"featuretypes",
-						"hc_tinh.json"
-					]
+			"name": "Feature Types",
+			"item": [
+				{
+					"name": "List feature types",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{rest_base_url}}//workspaces/{{workspace}}/featuretypes\n\n",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"",
+								"workspaces",
+								"{{workspace}}",
+								"featuretypes\n\n"
+							]
+						},
+						"description": "Get a list of feature types for the workspace and datastore. Use the “Accept:” header to specify format or append an extension to the endpoint (example “/featuretypes.xml” for XML)\n\nhttps://docs.geoserver.org/latest/en/api/#1.0.0/featuretypes.yaml"
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"auth": {
@@ -1012,14 +1410,14 @@
 	],
 	"variable": [
 		{
-			"id": "3f6580c8-3932-42e4-a120-dcdc1151a6e8",
+			"id": "f5c2817b-7fe2-4b58-8b7c-098e4f9d9590",
 			"key": "base_url",
 			"value": "localhost:8085",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "a53b3ea0-9956-4e80-9d31-6d9811c696b2",
+			"id": "d325b273-ac6d-40d8-9b7a-3938846c673f",
 			"key": "rest_base_url",
 			"value": "localhost:8085/geoserver/rest",
 			"type": "string"
