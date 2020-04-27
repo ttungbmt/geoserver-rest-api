@@ -3,7 +3,7 @@ namespace ttungbmt\Laravel\Geoserver;
 use OneOffTech\GeoServer\StyleFile;
 
 /**
- * 
+ *
  * @method static array manifest()
  * @method static string version()
  * @method static array workspaces()
