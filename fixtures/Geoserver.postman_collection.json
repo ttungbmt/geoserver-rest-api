@@ -923,13 +923,30 @@
 					"response": []
 				},
 				{
-					"name": "Create style",
+					"name": "Create a style",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
 						"url": {
-							"raw": ""
-						}
+							"raw": "http://{{rest_base_url}}//workspaces/{{workspaceName}}/styles",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"",
+								"workspaces",
+								"{{workspaceName}}",
+								"styles"
+							]
+						},
+						"description": "Get a list of layers"
 					},
 					"response": []
 				},
@@ -1410,14 +1427,14 @@
 	],
 	"variable": [
 		{
-			"id": "f5c2817b-7fe2-4b58-8b7c-098e4f9d9590",
+			"id": "89851b60-0b41-488c-ac5e-f4e6ba88ffc4",
 			"key": "base_url",
 			"value": "localhost:8085",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "d325b273-ac6d-40d8-9b7a-3938846c673f",
+			"id": "11e012c2-edaa-4a98-926f-df3853b93ae9",
 			"key": "rest_base_url",
 			"value": "localhost:8085/geoserver/rest",
 			"type": "string"
