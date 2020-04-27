@@ -1,0 +1,1029 @@
+{
+	"info": {
+		"_postman_id": "1421e0af-c7c8-0318-9ab5-e16dcfa6e368",
+		"name": "Geoserver",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WFS",
+			"item": [
+				{
+					"name": "WFS getFeature",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://pcd.hcmgis.vn/geoserver/wfs?request=GetFeature&version=1.0.0&typeNames=hcm_map:poi_diadiem_binhthanh1&outputFormat=application/json&cql_filter=DWITHIN(geom,POINT(106.70175075531006%2010.799920917433026),%200.00471880969301712,meters)%20AND%20loai_diadiem%20=%20%27ATM%27",
+							"protocol": "http",
+							"host": [
+								"pcd",
+								"hcmgis",
+								"vn"
+							],
+							"path": [
+								"geoserver",
+								"wfs"
+							],
+							"query": [
+								{
+									"key": "request",
+									"value": "GetFeature"
+								},
+								{
+									"key": "version",
+									"value": "1.0.0"
+								},
+								{
+									"key": "typeNames",
+									"value": "hcm_map:poi_diadiem_binhthanh1"
+								},
+								{
+									"key": "outputFormat",
+									"value": "application/json"
+								},
+								{
+									"key": "cql_filter",
+									"value": "DWITHIN(geom,POINT(106.70175075531006%2010.799920917433026),%200.00471880969301712,meters)%20AND%20loai_diadiem%20=%20%27ATM%27"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "s",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://pcd.hcmgis.vn/geoserver/wfs?request=GetFeature&version=1.0.0&typeNames=hcm_map:poi_diadiem_binhthanh1&outputFormat=application/json&cql_filter=DWITHIN(geom,POINT(106.70175075531006 10.799920917433026), 0.00471880969301712,meters) AND loai_diadiem = 'ATM'",
+									"protocol": "http",
+									"host": [
+										"pcd",
+										"hcmgis",
+										"vn"
+									],
+									"path": [
+										"geoserver",
+										"wfs"
+									],
+									"query": [
+										{
+											"key": "request",
+											"value": "GetFeature"
+										},
+										{
+											"key": "version",
+											"value": "1.0.0"
+										},
+										{
+											"key": "typeNames",
+											"value": "hcm_map:poi_diadiem_binhthanh1"
+										},
+										{
+											"key": "outputFormat",
+											"value": "application/json"
+										},
+										{
+											"key": "cql_filter",
+											"value": "DWITHIN(geom,POINT(106.70175075531006 10.799920917433026), 0.00471880969301712,meters) AND loai_diadiem = 'ATM'"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true",
+									"name": "Access-Control-Allow-Credentials",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+									"name": "Access-Control-Allow-Origin",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "inline; filename=geoserver-GetFeature.application",
+									"name": "Content-Disposition",
+									"description": ""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 May 2017 01:41:43 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100",
+									"name": "Keep-Alive",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\"type\":\"FeatureCollection\",\"totalFeatures\":11,\"features\":[{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.13\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.701952,10.8036476]},\"geometry_name\":\"geom\",\"properties\":{\"id\":13,\"ma_dap_vien\":\"53946523\",\"ten\":\"SACOMBANK\",\"so_nha\":\"''270B\",\"ten_duong\":\"BACH DANG\",\"ten_phuong\":\"PHUONG 24\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[2] 6-9.9m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.8036476;106.7019528;36.0;-1.0;-1.0;2\",\"gps2\":\"10.8036448;106.7019387;40.5;-1.0;-1.0;2\",\"gps_tong\":\"10.8036476;106.7019528;36.0;-1.0;-1.0;2\",\"lat\":\"10.8036476\",\"lng\":\"106.701952\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}},{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.474\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.69810192,10.80246508]},\"geometry_name\":\"geom\",\"properties\":{\"id\":474,\"ma_dap_vien\":\"54165415\",\"ten\":\"BIDV\",\"so_nha\":\"''CANH PHAI 2\",\"ten_duong\":\"PHAN DANG LUU\",\"ten_phuong\":\"PHUONG 14\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[1] 1-5.9m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.80246508039651;106.6981019225042;10.0;36.522465;10.0;1\",\"gps2\":\"\",\"gps_tong\":\"10.80246508039651;106.6981019225042;10.0;36.522465;10.0;1\",\"lat\":\"10.80246508039651\",\"lng\":\"106.6981019225042\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}},{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.4131\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.70203968,10.79563515]},\"geometry_name\":\"geom\",\"properties\":{\"id\":4131,\"ma_dap_vien\":\"62473794\",\"ten\":\"ACB\",\"so_nha\":\"'71\",\"ten_duong\":\"DIEN BIEN PHU\",\"ten_phuong\":\"PHUONG 15\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[3] >10m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.79563515218245;106.70203968166321;15.0;-21.0;15.0;1\",\"gps2\":\"10.794867;106.701734;1273.0;-1.0;-1.0;2\",\"gps_tong\":\"10.79563515218245;106.70203968166321;15.0;-21.0;15.0;1\",\"lat\":\"10.79563515218245\",\"lng\":\"106.7020396816632\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}},{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.4144\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.70182987,10.79524119]},\"geometry_name\":\"geom\",\"properties\":{\"id\":4144,\"ma_dap_vien\":\"62475008\",\"ten\":\"VIETINBANK\",\"so_nha\":\"'57\",\"ten_duong\":\"DIEN BIEN PHU\",\"ten_phuong\":\"PHUONG 15\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[3] >10m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.795241188890346;106.7018298682941;15.0;54.0;15.0;1\",\"gps2\":\"10.794867;106.701734;1273.0;-1.0;-1.0;2\",\"gps_tong\":\"10.795241188890346;106.7018298682941;15.0;54.0;15.0;1\",\"lat\":\"10.795241188890346\",\"lng\":\"106.7018298682941\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}},{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.7451\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.6994,10.79923]},\"geometry_name\":\"geom\",\"properties\":{\"id\":7451,\"ma_dap_vien\":\"71254972\",\"ten\":\"ACB\",\"so_nha\":\"'293-295\",\"ten_duong\":\"BUI HUU NGHIA\",\"ten_phuong\":\"PHUONG 1\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[3] >10m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.79923;106.6994663;30.0;-1.0;-1.0;1\",\"gps2\":\"\",\"gps_tong\":\"10.79923;106.6994663;30.0;-1.0;-1.0;1\",\"lat\":\"10.79923\",\"lng\":\"106.6994\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}},{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.6528\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.69892583,10.80167221]},\"geometry_name\":\"geom\",\"properties\":{\"id\":6528,\"ma_dap_vien\":\"63887312\",\"ten\":\"VIETINBANK\",\"so_nha\":\"'346_348\",\"ten_duong\":\"BUI HUU NGHIA\",\"ten_phuong\":\"PHUONG 2\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[2] 6-9.9m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.80167221256302;106.69892583409634;10.0;19.37204;10.0;1\",\"gps2\":\"\",\"gps_tong\":\"10.80167221256302;106.69892583409634;10.0;19.37204;10.0;1\",\"lat\":\"10.80167221256302\",\"lng\":\"106.6989258340963\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}},{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.6872\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.69921065,10.80276178]},\"geometry_name\":\"geom\",\"properties\":{\"id\":6872,\"ma_dap_vien\":\"64202259\",\"ten\":\"TPBANK\",\"so_nha\":\"'481_483\",\"ten_duong\":\"BACH DANG\",\"ten_phuong\":\"PHUONG 2\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[2] 6-9.9m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.802761776543642;106.6992106542863;20.0;48.698112;20.0;1\",\"gps2\":\"\",\"gps_tong\":\"10.802761776543642;106.6992106542863;20.0;48.698112;20.0;1\",\"lat\":\"10.802761776543642\",\"lng\":\"106.6992106542863\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}},{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.8137\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.698918,10.80281833]},\"geometry_name\":\"geom\",\"properties\":{\"id\":8137,\"ma_dap_vien\":\"71917692\",\"ten\":\"VIETCOMBANK\",\"so_nha\":\"'368\",\"ten_duong\":\"BACH DANG\",\"ten_phuong\":\"PHUONG 14\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[3] >10m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.80281833;106.69891804;15.0;57.0;15.0;1\",\"gps2\":\"\",\"gps_tong\":\"10.80281833;106.69891804;15.0;57.0;15.0;1\",\"lat\":\"10.80281833\",\"lng\":\"106.6989180\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}},{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.8892\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.706088,10.7996751]},\"geometry_name\":\"geom\",\"properties\":{\"id\":8892,\"ma_dap_vien\":\"72393680\",\"ten\":\"VIETCOMBANK\",\"so_nha\":\"'199\",\"ten_duong\":\"DIEN BIEN PHU\",\"ten_phuong\":\"PHUONG 15\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[3] >10m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.7996751;106.70608808;6.0;10.0;6.0;1\",\"gps2\":\"\",\"gps_tong\":\"10.7996751;106.70608808;6.0;10.0;6.0;1\",\"lat\":\"10.7996751\",\"lng\":\"106.706088\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}},{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.8904\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.7043309,10.79806768]},\"geometry_name\":\"geom\",\"properties\":{\"id\":8904,\"ma_dap_vien\":\"72393768\",\"ten\":\"TECHCOMBANK\",\"so_nha\":\"'163\",\"ten_duong\":\"DIEN BIEN PHU\",\"ten_phuong\":\"PHUONG 15\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[3] >10m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.79806768;106.70433093;6.0;27.0;6.0;1\",\"gps2\":\"\",\"gps_tong\":\"10.79806768;106.70433093;6.0;27.0;6.0;1\",\"lat\":\"10.79806768\",\"lng\":\"106.7043309\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}},{\"type\":\"Feature\",\"id\":\"poi_diadiem_binhthanh1.8909\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[106.7041084,10.79749782]},\"geometry_name\":\"geom\",\"properties\":{\"id\":8909,\"ma_dap_vien\":\"72393827\",\"ten\":\"EXIMBANK\",\"so_nha\":\"'155\",\"ten_duong\":\"DIEN BIEN PHU\",\"ten_phuong\":\"PHUONG 15\",\"ten_quan\":\"BINH THANH\",\"thanh_pho\":\"HCMC\",\"dientich_rong\":\"\",\"dientich_dai\":\"\",\"loai_duong\":\"Main\",\"chieu_rong_duong\":\"[3] >10m\",\"loai_diadiem\":\"ATM\",\"so_tang\":\"NA\",\"la_chuoi\":\"NA\",\"ten_chuoi\":\"\",\"gps1\":\"10.79749782;106.70410841;18.0;72.0;18.0;1\",\"gps2\":\"\",\"gps_tong\":\"10.79749782;106.70410841;18.0;72.0;18.0;1\",\"lat\":\"10.79749782\",\"lng\":\"106.7041084\",\"dien_tich\":\"\",\"cua_hang_24h\":\"NA\"}}],\"crs\":{\"type\":\"name\",\"properties\":{\"name\":\"urn:ogc:def:crs:EPSG::4326\"}}}"
+						}
+					]
+				},
+				{
+					"name": "Get feature by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/wfs?service=wfs&version=2.0.0&request=GetFeature&typeNames=drought:hc_tinh&featureID=1&outputFormat=application/json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"wfs"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "wfs"
+								},
+								{
+									"key": "version",
+									"value": "2.0.0"
+								},
+								{
+									"key": "request",
+									"value": "GetFeature"
+								},
+								{
+									"key": "typeNames",
+									"value": "drought:hc_tinh"
+								},
+								{
+									"key": "featureID",
+									"value": "1"
+								},
+								{
+									"key": "outputFormat",
+									"value": "application/json"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "WMS",
+			"item": [
+				{
+					"name": "http://pcd.hcmgis.vn/geoserver/ows?&REQUEST=GetFeatureInfo&SERVICE=WMS&SRS=EPSG:4326&STYLES=&TRANSPARENT=true&VERSION=1.1.1&FORMAT=image/png&BBOX=106.6465187072754,10.751522847111536,106.73492431640625,10.841904564963693&HEIGHT=536&WIDTH=515&LAYERS=hcm_ma",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pcd.hcmgis.vn/geoserver/ows?&REQUEST=GetFeatureInfo&SERVICE=WMS&SRS=EPSG:4326&STYLES=&TRANSPARENT=true&VERSION=1.1.1&FORMAT=image/png&BBOX=106.6465187072754,10.751522847111536,106.73492431640625,10.841904564963693&HEIGHT=536&WIDTH=515&LAYERS=hcm_map:poi_diadiem_binhthanh1&QUERY_LAYERS=hcm_map:poi_diadiem_binhthanh1&ENV=undefined&VIEWPARAMS=undefined&INFO_FORMAT=application/json&X=281&Y=262",
+							"protocol": "http",
+							"host": [
+								"pcd",
+								"hcmgis",
+								"vn"
+							],
+							"path": [
+								"geoserver",
+								"ows"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": ""
+								},
+								{
+									"key": "REQUEST",
+									"value": "GetFeatureInfo"
+								},
+								{
+									"key": "SERVICE",
+									"value": "WMS"
+								},
+								{
+									"key": "SRS",
+									"value": "EPSG:4326"
+								},
+								{
+									"key": "STYLES",
+									"value": ""
+								},
+								{
+									"key": "TRANSPARENT",
+									"value": "true"
+								},
+								{
+									"key": "VERSION",
+									"value": "1.1.1"
+								},
+								{
+									"key": "FORMAT",
+									"value": "image/png"
+								},
+								{
+									"key": "BBOX",
+									"value": "106.6465187072754,10.751522847111536,106.73492431640625,10.841904564963693"
+								},
+								{
+									"key": "HEIGHT",
+									"value": "536"
+								},
+								{
+									"key": "WIDTH",
+									"value": "515"
+								},
+								{
+									"key": "LAYERS",
+									"value": "hcm_map:poi_diadiem_binhthanh1"
+								},
+								{
+									"key": "QUERY_LAYERS",
+									"value": "hcm_map:poi_diadiem_binhthanh1"
+								},
+								{
+									"key": "ENV",
+									"value": "undefined"
+								},
+								{
+									"key": "VIEWPARAMS",
+									"value": "undefined"
+								},
+								{
+									"key": "INFO_FORMAT",
+									"value": "application/json"
+								},
+								{
+									"key": "X",
+									"value": "281"
+								},
+								{
+									"key": "Y",
+									"value": "262"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://pcd.hcmgis.vn:80/geoserver/wms?request=getCapabilities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pcd.hcmgis.vn/geoserver/ows?&REQUEST=GetFeatureInfo&SERVICE=WMS&SRS=EPSG:4326&STYLES=&TRANSPARENT=true&VERSION=1.1.1&FORMAT=image/png&BBOX=106.6465187072754,10.751522847111536,106.73492431640625,10.841904564963693&HEIGHT=536&WIDTH=515&LAYERS=hcm_map:poi_diadiem_binhthanh1&QUERY_LAYERS=hcm_map:poi_diadiem_binhthanh1&ENV=undefined&VIEWPARAMS=undefined&INFO_FORMAT=application/json&X=281&Y=262",
+							"protocol": "http",
+							"host": [
+								"pcd",
+								"hcmgis",
+								"vn"
+							],
+							"path": [
+								"geoserver",
+								"ows"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": ""
+								},
+								{
+									"key": "REQUEST",
+									"value": "GetFeatureInfo"
+								},
+								{
+									"key": "SERVICE",
+									"value": "WMS"
+								},
+								{
+									"key": "SRS",
+									"value": "EPSG:4326"
+								},
+								{
+									"key": "STYLES",
+									"value": ""
+								},
+								{
+									"key": "TRANSPARENT",
+									"value": "true"
+								},
+								{
+									"key": "VERSION",
+									"value": "1.1.1"
+								},
+								{
+									"key": "FORMAT",
+									"value": "image/png"
+								},
+								{
+									"key": "BBOX",
+									"value": "106.6465187072754,10.751522847111536,106.73492431640625,10.841904564963693"
+								},
+								{
+									"key": "HEIGHT",
+									"value": "536"
+								},
+								{
+									"key": "WIDTH",
+									"value": "515"
+								},
+								{
+									"key": "LAYERS",
+									"value": "hcm_map:poi_diadiem_binhthanh1"
+								},
+								{
+									"key": "QUERY_LAYERS",
+									"value": "hcm_map:poi_diadiem_binhthanh1"
+								},
+								{
+									"key": "ENV",
+									"value": "undefined"
+								},
+								{
+									"key": "VIEWPARAMS",
+									"value": "undefined"
+								},
+								{
+									"key": "INFO_FORMAT",
+									"value": "application/json"
+								},
+								{
+									"key": "X",
+									"value": "281"
+								},
+								{
+									"key": "Y",
+									"value": "262"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "Create layer",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "geoserver",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/geoserver/rest/workspaces/drought/datastores/drought/featuretypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"rest",
+								"workspaces",
+								"drought",
+								"datastores",
+								"drought",
+								"featuretypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change style",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "geoserver",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<layer>\n\t<defaultStyle>\n\t\t<name>grid</name>\n\t</defaultStyle>\n</layer>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/geoserver/rest/layers/drought:v_cdi_2016_03",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"rest",
+								"layers",
+								"drought:v_cdi_2016_03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload style",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "geoserver",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/geoserver/rest/workspaces/drought/datastores/drought/featuretypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"rest",
+								"workspaces",
+								"drought",
+								"datastores",
+								"drought",
+								"featuretypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete layer",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "geoserver",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/geoserver/rest/layers/drought:m_cdi_2020_03",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"rest",
+								"layers",
+								"drought:m_cdi_2020_03"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "WPS",
+			"item": [
+				{
+					"name": "GetCapabilities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Execute wkt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><wps:Execute version=\"1.0.0\" service=\"WPS\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.opengis.net/wps/1.0.0\" xmlns:wfs=\"http://www.opengis.net/wfs\" xmlns:wps=\"http://www.opengis.net/wps/1.0.0\" xmlns:ows=\"http://www.opengis.net/ows/1.1\" xmlns:gml=\"http://www.opengis.net/gml\" xmlns:ogc=\"http://www.opengis.net/ogc\" xmlns:wcs=\"http://www.opengis.net/wcs/1.1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xsi:schemaLocation=\"http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsAll.xsd\">\r\n  <ows:Identifier>JTS:centroid</ows:Identifier>\r\n  <wps:DataInputs>\r\n    <wps:Input>\r\n      <ows:Identifier>geom</ows:Identifier>\r\n      <wps:Data>\r\n        <wps:ComplexData mimeType=\"application/wkt\"><![CDATA[POINT(106.293964965725 17.5316733534352)]]></wps:ComplexData>\r\n      </wps:Data>\r\n    </wps:Input>\r\n  </wps:DataInputs>\r\n  <wps:ResponseForm>\r\n    <wps:RawDataOutput mimeType=\"application/json\">\r\n      <ows:Identifier>result</ows:Identifier>\r\n    </wps:RawDataOutput>\r\n  </wps:ResponseForm>\r\n</wps:Execute>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/geoserver/ows?service=WPS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"ows"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WPS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Execute buffer wkt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<wps:Execute version=\"1.0.0\" service=\"WPS\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.opengis.net/wps/1.0.0\" xmlns:wfs=\"http://www.opengis.net/wfs\" xmlns:wps=\"http://www.opengis.net/wps/1.0.0\" xmlns:ows=\"http://www.opengis.net/ows/1.1\" xmlns:gml=\"http://www.opengis.net/gml\" xmlns:ogc=\"http://www.opengis.net/ogc\" xmlns:wcs=\"http://www.opengis.net/wcs/1.1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xsi:schemaLocation=\"http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsAll.xsd\">\r\n  <ows:Identifier>JTS:buffer</ows:Identifier>\r\n  <wps:DataInputs>\r\n    <wps:Input>\r\n      <ows:Identifier>geom</ows:Identifier>\r\n      <wps:Data>\r\n        <wps:ComplexData mimeType=\"application/wkt\"><![CDATA[POINT(106.293964965725 17.5316733534352)]]></wps:ComplexData>\r\n      </wps:Data>\r\n    </wps:Input>\r\n    <wps:Input>\r\n      <ows:Identifier>distance</ows:Identifier>\r\n      <wps:Data>\r\n        <wps:LiteralData>10</wps:LiteralData>\r\n      </wps:Data>\r\n    </wps:Input>\r\n  </wps:DataInputs>\r\n  <wps:ResponseForm>\r\n    <wps:RawDataOutput mimeType=\"application/json\">\r\n      <ows:Identifier>result</ows:Identifier>\r\n    </wps:RawDataOutput>\r\n  </wps:ResponseForm>\r\n</wps:Execute>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/geoserver/ows?service=WPS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"ows"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WPS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Centroid WFS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><wps:Execute version=\"1.0.0\" service=\"WPS\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.opengis.net/wps/1.0.0\" xmlns:wfs=\"http://www.opengis.net/wfs\" xmlns:wps=\"http://www.opengis.net/wps/1.0.0\" xmlns:ows=\"http://www.opengis.net/ows/1.1\" xmlns:gml=\"http://www.opengis.net/gml\" xmlns:ogc=\"http://www.opengis.net/ogc\" xmlns:wcs=\"http://www.opengis.net/wcs/1.1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xsi:schemaLocation=\"http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsAll.xsd\">\r\n  <ows:Identifier>vec:Centroid</ows:Identifier>\r\n  <wps:DataInputs>\r\n    <wps:Input>\r\n      <ows:Identifier>features</ows:Identifier>\r\n      <wps:Reference mimeType=\"text/xml\" xlink:href=\"http://geoserver/wfs\" method=\"POST\">\r\n        <wps:Body>\r\n          <wfs:GetFeature service=\"WFS\" version=\"1.0.0\" outputFormat=\"GML2\" xmlns:drought=\"drought\">\r\n            <wfs:Query typeName=\"drought:hc_tinh\"/>\r\n          </wfs:GetFeature>\r\n        </wps:Body>\r\n      </wps:Reference>\r\n    </wps:Input>\r\n  </wps:DataInputs>\r\n  <wps:ResponseForm>\r\n    <wps:RawDataOutput mimeType=\"application/json\">\r\n      <ows:Identifier>result</ows:Identifier>\r\n    </wps:RawDataOutput>\r\n  </wps:ResponseForm>\r\n</wps:Execute>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/geoserver/ows?service=WPS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"geoserver",
+								"ows"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "WPS"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Wordspace",
+			"item": [
+				{
+					"name": "List workspace",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{rest_base_url}}/workspaces",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"workspaces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create workspace",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit workspace",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Style",
+			"item": [
+				{
+					"name": "Create style",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit style",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete style",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set style for layer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Layers",
+			"item": [
+				{
+					"name": "List layers",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "geoserver",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{rest_base_url}}/layers",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"layers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete layer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit layer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "Create store",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit store",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete store",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "FeatureType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{rest_base_url}}/workspaces/ws-drought/datastores/drought/featuretypes/hc_tinh.json",
+					"protocol": "http",
+					"host": [
+						"{{rest_base_url}}"
+					],
+					"path": [
+						"workspaces",
+						"ws-drought",
+						"datastores",
+						"drought",
+						"featuretypes",
+						"hc_tinh.json"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "geoserver",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b66699c0-2a34-4542-8270-547c2ba5588d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6cbde52c-8031-4642-bd8a-127f4cbbab7f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "3f6580c8-3932-42e4-a120-dcdc1151a6e8",
+			"key": "base_url",
+			"value": "localhost:8085",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"id": "a53b3ea0-9956-4e80-9d31-6d9811c696b2",
+			"key": "rest_base_url",
+			"value": "localhost:8085/geoserver/rest",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
