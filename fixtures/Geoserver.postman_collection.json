@@ -744,6 +744,27 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Settings WPS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{rest_base_url}}/services/wps/settings",
+							"protocol": "http",
+							"host": [
+								"{{rest_base_url}}"
+							],
+							"path": [
+								"services",
+								"wps",
+								"settings"
+							]
+						},
+						"description": "Displays a list of all workspaces on the server. Use the “Accept:” header to specify format or append an extension to the endpoint (example “/workspaces.json” for JSON)"
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -1427,14 +1448,14 @@
 	],
 	"variable": [
 		{
-			"id": "89851b60-0b41-488c-ac5e-f4e6ba88ffc4",
+			"id": "518cc473-ea50-4c7b-94e4-7af81e005bbd",
 			"key": "base_url",
 			"value": "localhost:8085",
 			"type": "string",
 			"disabled": true
 		},
 		{
-			"id": "11e012c2-edaa-4a98-926f-df3853b93ae9",
+			"id": "0ad0316e-7006-464e-b297-7457c251581a",
 			"key": "rest_base_url",
 			"value": "localhost:8085/geoserver/rest",
 			"type": "string"
