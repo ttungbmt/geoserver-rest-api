@@ -1,11 +1,11 @@
 {
-    "name": "ttungbmt/laravel-geoserver",
-    "description": "Laravel GeoServer REST API",
+    "name": "ttungbmt/geoserver-rest-api",
+    "description": "GeoServer REST API For Laravel/PHP",
     "keywords": [
         "laravel",
         "geoserver"
     ],
-    "homepage": "https://github.com/ttungbmt/livewire-form",
+    "homepage": "https://github.com/ttungbmt/geoserver-rest-api",
     "license": "MIT",
     "authors": [
         {
@@ -28,10 +28,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ttungbmt\\Laravel\\Geoserver\\GeoServerServiceProvider"
+                "ttungbmt\\REST\\Geoserver\\GeoServerServiceProvider"
             ],
             "aliases": {
-                "Geoserver": "ttungbmt\\Laravel\\Geoserver\\Facade"
+                "Geoserver": "ttungbmt\\REST\\Geoserver\\Facade"
             }
         }
     },
