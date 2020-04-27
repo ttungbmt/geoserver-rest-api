@@ -1,6 +1,30 @@
 
 # Usage
 
+## Yii2
+Add the following code in main.php
+```
+    ....
+    'components' => [
+        'geoserver' => [
+            'class' => \ttungbmt\REST\Geoserver\Yii2\Geoserver::className(),
+            'url' => 'http://localhost:8080/geoserver/',
+            'username' => 'admin',
+            'password' => 'geoserver',
+            'workspace' => 'drought'
+        ]
+    ....
+
+```
+Import Facade and use Geoserver
+use ttungbmt\REST\Geoserver\Yii2\Facade\Geoserver;
+```
+use ttungbmt\REST\Geoserver\Yii2\Facade\Geoserver;
+...
+Geoserver::version()
+```
+## Laravel
+
 ## Creating a client
 
 To create a GeoServer client use the `GeoServer::build` method. 
