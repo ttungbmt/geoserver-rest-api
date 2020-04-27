@@ -81,14 +81,14 @@ class Geoserver
         return $this->workspace($workspaceName);
     }
 
-    public function updateWorkspace($name, $data = []){
+    public function updateWorkspace(string $name, array $data = []){
         $route = $this->routes->url("workspaces/".$this->getWorkspaceName($name));
         $this->put($route, ['workspace' => $data]);
 
         return $this->workspace();
     }
 
-    public function deleteWorkspace($name){
+    public function deleteWorkspace(string $name){
         $workspace = $this->workspace($name);
 
         $route = $this->routes->url("workspaces/".$this->getWorkspaceName($name));
@@ -142,17 +142,6 @@ class Geoserver
         $this->put($route, ['layer' => $data]);
 
         return $this->layer($name);
-    }
-
-    public function deleteLayer(string $name){
-        $layer = $this->workspace($name);
-
-        $route = $this->routes->url("workspaces/{$this->workspace}/layers/{$name}");
-        $this->delete($route);
-
-        $layer->exists = false;
-
-        return $layer;
     }
 
     public function deleteLayer(string $name){

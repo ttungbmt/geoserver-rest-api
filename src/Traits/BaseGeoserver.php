@@ -66,7 +66,6 @@ trait BaseGeoserver
     }
 
 
-
     /**
      * Retrieve the list of datastores defined in the workspace.
      * A data store contains vector format spatial data.
