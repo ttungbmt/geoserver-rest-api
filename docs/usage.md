@@ -38,7 +38,7 @@ $version = $geoserver->version();
 ```
 
 ## Workspace
-#### Create Workspace
+### Create Workspace
 
 The client can create the configured workspace if not available. 
 To do so call `createWorkspace()`:
@@ -50,7 +50,7 @@ $workspace = $geoserver->createWorkspace();
 
 In case the creation goes well or the workspace already exists, a `Workspace` instance is returned.
 
-#### Retrieve the workspace details
+### Retrieve the workspace details
 
 The `workspace()` method retrieve the details of the configured workspace
 
@@ -59,14 +59,14 @@ $workspace = $geoserver->workspace();
 // => \OneOffTech\GeoServer\Models\Workspace
 ```
 
-#### Update the workspace
+### Update the workspace
 
 ```php
 $workspace = $geoserver->updateWorkspace(['name' => 'ws-new-name']);
 // => \OneOffTech\GeoServer\Models\Workspace
 ```
 
-#### Delete the workspace
+### Delete the workspace
 
 ```php
 $workspace = $geoserver->deleteWorkspace();
@@ -84,7 +84,7 @@ $datastores = $geoserver->datastores();
 // => array of \OneOffTech\GeoServer\Models\DataStore
 ```
 
-#### Create a datastore:
+### Create a datastore:
 	
 ```php
 $datastore = $geoserver->createDatastore([
@@ -103,7 +103,7 @@ $datastore = $geoserver->createDatastore([
 // => \OneOffTech\GeoServer\Models\DataStore
 ```
 
-#### Update a datastore:
+### Update a datastore:
 ```php
 $datastore = $geoserver->updateDatastore($name, [
     'connectionParameters' => [
@@ -120,37 +120,37 @@ $datastore = $geoserver->updateDatastore($name, [
 // => \OneOffTech\GeoServer\Models\DataStore
 ```
 
-#### Retrieve a datastores by name:
+### Retrieve a datastores by name:
 
 ```php
 $datastore = $geoserver->datastore($name);
 // => \OneOffTech\GeoServer\Models\DataStore
 ```
 
-#### Delete the datastore
+### Delete the datastore
 
 ```php
 $result = $geoserver->deleteDatastore($name);
 ```
 
 ## Layer
-#### Get list of layers
+### Get list of layers
 ```php
 $datastore = $geoserver->layers();
 ```
-#### Get a layer
+### Get a layer
 ```php
 $datastore = $geoserver->layer($name);
 ```
-#### Create a layer
+### Create a layer
 ```php
 $datastore = $geoserver->createLayer($datastore, $name);
 ```
-#### Update a layer
+### Update a layer
 ```php
 $datastore = $geoserver->updateLayer($name, ['name' => 'new_layer_name']);
 ```
-#### Delete a layer
+### Delete a layer
 ```php
 $datastore = $geoserver->createLayer($name);
 ```
@@ -295,13 +295,13 @@ $style = $geoserver->uploadStyle($file);
 // => OneOffTech\GeoServer\Models\Style
 ```
 
-#### Get a list of styles
+### Get a list of styles
 
-#### Create a style
+### Create a style
 
-#### Update a style
+### Update a style
 
-#### Retrieve a style
+### Retrieve a style
 
 The client let you retrieve a style by its name
 
@@ -313,7 +313,7 @@ $style = $geoserver->style('style_name');
 > The name must be equal to the one given for the upload.
 > It might not be the file name
 
-#### Retrieve all styles
+### Retrieve all styles
 
 You can also retrieve all styles defined in the workspace
 
@@ -322,7 +322,7 @@ $styles = $geoserver->styles();
 // => array of OneOffTech\GeoServer\Models\Style
 ```
 
-#### Remove a style
+### Remove a style
 
 Style removal is performed by giving the style name to the `removeStyle` method. 
 The method will return the details of the deleted style.
