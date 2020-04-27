@@ -6,6 +6,7 @@ It is Free and Open Source Software. All contributions are most welcome. Learn m
 
 #### Features
 
+* Support for [Yii2](./docs/usage.md#yii2), [Laravel](./docs/usage.md#laravel) 
 * Obtain the [version](./docs/usage.md#get-the-geoserver-version) of the connected GeoServer instance
 * [Create / Update / Delete workspace](./docs/usage.md#workspace) or retrieve existing workspace details
 * [Create / Update / Delete datastores](./docs/usage.md#data-stores) and listing them
