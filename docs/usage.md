@@ -21,7 +21,9 @@ use ttungbmt\REST\Geoserver\Yii2\Facade\Geoserver;
 ```
 use ttungbmt\REST\Geoserver\Yii2\Facade\Geoserver;
 ...
-Geoserver::version()
+Geoserver::version();
+Geoserver::workspace();
+Geoserver::layer($name);
 ```
 ## Laravel
 
