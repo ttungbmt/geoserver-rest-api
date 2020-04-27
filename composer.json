@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ttungbmt\\Laravel\\Geoserver\\": "src/"
+            "ttungbmt\\REST\\Geoserver\\": "src/"
         }
     },
     "extra": {

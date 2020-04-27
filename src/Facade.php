@@ -1,5 +1,5 @@
 <?php
-namespace ttungbmt\Laravel\Geoserver;
+namespace ttungbmt\REST\Geoserver;
 use OneOffTech\GeoServer\StyleFile;
 
 /**

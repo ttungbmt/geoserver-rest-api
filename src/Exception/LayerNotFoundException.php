@@ -1,6 +1,6 @@
 <?php
 
-namespace ttungbmt\Laravel\Geoserver\Exception;
+namespace ttungbmt\REST\Geoserver\Exception;
 
 use OneOffTech\GeoServer\Exception\GeoServerClientException;
 

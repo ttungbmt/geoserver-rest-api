@@ -1,6 +1,6 @@
 <?php
 
-namespace ttungbmt\Laravel\Geoserver;
+namespace ttungbmt\REST\Geoserver;
 
 use OneOffTech\GeoServer\Exception\ErrorResponseException;
 use OneOffTech\GeoServer\Exception\StoreNotFoundException;
@@ -8,8 +8,8 @@ use OneOffTech\GeoServer\Http\InteractsWithHttp;
 use OneOffTech\GeoServer\Http\Responses\WorkspaceResponse;
 use OneOffTech\GeoServer\Http\Routes;
 use OneOffTech\GeoServer\Options;
-use ttungbmt\Laravel\Geoserver\Exception\LayerNotFoundException;
-use ttungbmt\Laravel\Geoserver\Traits\BaseGeoserver;
+use ttungbmt\REST\Geoserver\Exception\LayerNotFoundException;
+use ttungbmt\REST\Geoserver\Traits\BaseGeoserver;
 
 class Geoserver
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ttungbmt\Laravel\Geoserver;
+namespace ttungbmt\REST\Geoserver;
 
 use Illuminate\Support\ServiceProvider;
 use OneOffTech\GeoServer\Auth\Authentication;

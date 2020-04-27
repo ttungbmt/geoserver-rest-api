@@ -1,5 +1,5 @@
 <?php
-namespace ttungbmt\Laravel\Geoserver\Traits;
+namespace ttungbmt\REST\Geoserver\Traits;
 
 use OneOffTech\GeoServer\Auth\Authentication;
 use OneOffTech\GeoServer\Auth\NullAuthentication;
@@ -24,7 +24,7 @@ use OneOffTech\GeoServer\Options;
 use OneOffTech\GeoServer\StyleFile;
 use OneOffTech\GeoServer\Support\WmsOptions;
 use OneOffTech\GeoServer\Support\ZipReader;
-use ttungbmt\Laravel\Geoserver\Geoserver;
+use ttungbmt\REST\Geoserver\Geoserver;
 
 trait BaseGeoserver
 {

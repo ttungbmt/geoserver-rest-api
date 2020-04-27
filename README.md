@@ -17,6 +17,11 @@ The GeoServer REST API uses [Composer](http://getcomposer.org/) to manage its de
 composer require ttungbmt/geoserver-rest-api
 ```
 
+## Credits
+
+This Package is inspired by [OneOffTech/geoserver-client-php](https://github.com/OneOffTech/geoserver-client-php). Huge thanks goes to OneOffTech [OneOffTech/geoserver-client-php](https://github.com/OneOffTech/geoserver-client-php) for their amazing work!
+
 ## License
 
 This project is Free and Open Source Software, licensed under the [MIT license](./LICENSE.txt).
+
