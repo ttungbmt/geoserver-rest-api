@@ -1,0 +1,42 @@
+{
+    "name": "ttungbmt/laravel-geoserver",
+    "description": "Laravel GeoServer REST API",
+    "keywords": [
+        "laravel",
+        "geoserver"
+    ],
+    "homepage": "https://github.com/ttungbmt/livewire-form",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Truong Thanh Tung",
+            "email": "ttungbmt@gmail.com"
+        }
+    ],
+    "require": {
+        "php-http/guzzle6-adapter": "^2.0",
+        "guzzlehttp/psr7": "^1.6",
+        "http-interop/http-factory-guzzle": "^1.0",
+        "oneofftech/geoserver-client-php": "^0.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ttungbmt\\Laravel\\Geoserver\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ttungbmt\\Laravel\\Geoserver\\GeoServerServiceProvider"
+            ],
+            "aliases": {
+                "Geoserver": "ttungbmt\\Laravel\\Geoserver\\Facade"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
