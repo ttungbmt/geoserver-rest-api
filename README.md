@@ -1,4 +1,4 @@
-# GeoServer REST API For Laravel/PHP
+# GeoServer REST API For Laravel / Yii2 / PHP
 
 This PHP library provides programmatic functions to access a [GeoServer](http://geoserver.org/).
 
