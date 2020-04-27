@@ -81,14 +81,14 @@ class Geoserver
         return $this->workspace($workspaceName);
     }
 
-    public function updateWorkspace(string $name, array $data = []){
+    public function updateWorkspace(array $data, string $name = ''){
         $route = $this->routes->url("workspaces/".$this->getWorkspaceName($name));
         $this->put($route, ['workspace' => $data]);
 
         return $this->workspace();
     }
 
-    public function deleteWorkspace(string $name){
+    public function deleteWorkspace(string $name = ''){
         $workspace = $this->workspace($name);
 
         $route = $this->routes->url("workspaces/".$this->getWorkspaceName($name));
@@ -134,6 +134,13 @@ class Geoserver
 
             throw $ex;
         }
+    }
+
+    public function createLayer($datastore, string $name){
+        $route = $this->routes->url("/workspaces/{$this->workspace}/datastores/{$datastore}/featuretypes/{$name}");
+        $this->post($route, ['featureType' => ['name' => $name]]);
+
+        return $this->layer($name);
     }
 
     public function updateLayer(string $name, array $data){

@@ -9,7 +9,7 @@ use OneOffTech\GeoServer\StyleFile;
  * @method static array workspaces()
  * @method static \OneOffTech\GeoServer\Models\Workspace workspace(string $name = '')
  * @method static \OneOffTech\GeoServer\Models\Workspace createWorkspace(string $name = '')
- * @method static \OneOffTech\GeoServer\Models\Workspace updateWorkspace($name, $data = [])
+ * @method static \OneOffTech\GeoServer\Models\Workspace updateWorkspace(array $data, string $name)
  * @method static \OneOffTech\GeoServer\Models\Workspace deleteWorkspace($name)
  * @method static \OneOffTech\GeoServer\Models\DataStore[] datastores()
  * @method static \OneOffTech\GeoServer\Models\DataStore datastore($name)

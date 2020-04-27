@@ -9,7 +9,7 @@ It will give you back a configured client instance.
 As of now the client can handle 1 workspace at time by design.
 
 ```php
-use OneOffTech\GeoServer\GeoServer;
+use ttungbmt\REST\Geoserver\GeoServer;
 use OneOffTech\GeoServer\Auth\Authentication;
 
 /**
@@ -37,7 +37,8 @@ $version = $geoserver->version();
 // => 2.13.0
 ```
 
-## Create the workspace
+## Workspace
+##### Create Workspace
 
 The client can create the configured workspace if not available. 
 To do so call `createWorkspace()`:
@@ -49,7 +50,7 @@ $workspace = $geoserver->createWorkspace();
 
 In case the creation goes well or the workspace already exists, a `Workspace` instance is returned.
 
-## Retrieve the workspace details
+##### Retrieve the workspace details
 
 The `workspace()` method retrieve the details of the configured workspace
 
@@ -58,6 +59,19 @@ $workspace = $geoserver->workspace();
 // => \OneOffTech\GeoServer\Models\Workspace
 ```
 
+##### Update the workspace
+
+```php
+$workspace = $geoserver->updateWorkspace(['name' => 'ws-new-name']);
+// => \OneOffTech\GeoServer\Models\Workspace
+```
+
+##### Delete the workspace
+
+```php
+$workspace = $geoserver->deleteWorkspace();
+// => \OneOffTech\GeoServer\Models\Workspace
+```
 
 ## Data stores
 
@@ -70,18 +84,75 @@ $datastores = $geoserver->datastores();
 // => array of \OneOffTech\GeoServer\Models\DataStore
 ```
 
-Or retrieve a datastores by name:
+##### Create a datastore:
+	
+```php
+$datastore = $geoserver->createDatastore([
+    'name' =>  $name,
+    'connectionParameters' => [
+        'entry' => [
+            ['@key' => 'host', '$' => 'postgis'],
+            ['@key' => 'port', '$' => '5432'],
+            ['@key' => 'database', '$' => 'drought'],
+            ['@key' => 'user', '$' => 'postgres'],
+            ['@key' => 'passwd', '$' => 'postgres'],
+            ['@key' => 'Expose primary keys', '$' => true],
+        ]
+    ]
+]);
+// => \OneOffTech\GeoServer\Models\DataStore
+```
+
+##### Update a datastore:
+```php
+$datastore = $geoserver->updateDatastore($name, [
+    'connectionParameters' => [
+        'entry' => [
+            ['@key' => 'host', '$' => 'postgis'],
+            ['@key' => 'port', '$' => '5432'],
+            ['@key' => 'database', '$' => 'drought'],
+            ['@key' => 'user', '$' => 'postgres'],
+            ['@key' => 'passwd', '$' => 'postgres'],
+            ['@key' => 'Expose primary keys', '$' => false],
+        ]
+    ]
+]);
+// => \OneOffTech\GeoServer\Models\DataStore
+```
+
+##### Retrieve a datastores by name:
 
 ```php
 $datastore = $geoserver->datastore($name);
 // => \OneOffTech\GeoServer\Models\DataStore
 ```
 
-You cal also delete a data store via:
+##### Delete the datastore
 
 ```php
 $result = $geoserver->deleteDatastore($name);
-// => true || false
+```
+
+## Layer
+##### Get list of layers
+```php
+$datastore = $geoserver->layers();
+```
+##### Get a layer
+```php
+$datastore = $geoserver->layer($name);
+```
+##### Create a layer
+```php
+$datastore = $geoserver->createLayer($datastore, $name);
+```
+##### Update a layer
+```php
+$datastore = $geoserver->updateLayer($name, ['name' => 'new_layer_name']);
+```
+##### Delete a layer
+```php
+$datastore = $geoserver->createLayer($name);
 ```
 
 ## Coverage stores
@@ -224,7 +295,13 @@ $style = $geoserver->uploadStyle($file);
 // => OneOffTech\GeoServer\Models\Style
 ```
 
-### Retrieve a style
+##### Get a list of styles
+
+##### Create a style
+
+##### Update a style
+
+##### Retrieve a style
 
 The client let you retrieve a style by its name
 
@@ -236,7 +313,7 @@ $style = $geoserver->style('style_name');
 > The name must be equal to the one given for the upload.
 > It might not be the file name
 
-### Retrieve all styles
+##### Retrieve all styles
 
 You can also retrieve all styles defined in the workspace
 
@@ -245,7 +322,7 @@ $styles = $geoserver->styles();
 // => array of OneOffTech\GeoServer\Models\Style
 ```
 
-### Remove a style
+##### Remove a style
 
 Style removal is performed by giving the style name to the `removeStyle` method. 
 The method will return the details of the deleted style.
