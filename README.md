@@ -41,6 +41,14 @@ The library handles:
 
 Read more on [supported file formats and encoding](./docs/supported-files.md).
 
+## <a name="roadmap"></a>Roadmap
+
+Here's the TODO list for the next release.
+* [ ] Upload style via sld content
+* [ ] Working with WPS, WFS, WMS
+* [ ] Setting WPS, WFS, WMS
+
+
 ## Credits
 
 This Package is inspired by [OneOffTech/geoserver-client-php](https://github.com/OneOffTech/geoserver-client-php). Huge thanks goes to OneOffTech [OneOffTech/geoserver-client-php](https://github.com/OneOffTech/geoserver-client-php) for their amazing work!
